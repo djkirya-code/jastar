@@ -408,82 +408,131 @@ img {
   }
 }
 
+/* =========================
+   TEAM SECTION (FULL FIX)
+========================= */
+
+.section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+/* ===== DESKTOP GRID ===== */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* для 3 рядов на десктопе */
+  grid-template-columns: repeat(6, 1fr);
   gap: 20px;
   justify-items: center;
   align-items: start;
 }
 
-.section-title{
-    text-align: center;
-}
-
+/* ===== CARD ===== */
 .team-card {
-  background: #fff;
+  background: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   text-align: center;
-  padding: 15px;
+  padding: 16px;
   width: 200px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .team-card img {
-  width: 100%;
-  height: auto;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 12px;
+  margin: 0 auto 12px;
+  display: block;
 }
 
 .team-card h3 {
   font-size: 1.1rem;
-  margin-bottom: 5px;
+  margin: 8px 0 4px;
 }
 
 .team-card p {
   font-size: 0.9rem;
   color: #555;
+  margin: 0;
 }
 
-/* hover эффект */
+/* ===== HOVER ===== */
 .team-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transform: translateY(-6px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.15);
 }
 
-/* Первый ряд: директор */
+/* =========================
+   DESKTOP POSITIONING
+========================= */
+
+/* 1 ROW — DIRECTOR */
 .team-card.director {
   grid-column: 2 / span 4;
 }
 
-/* Второй ряд: заместители */
-.team-card.deputy:nth-child(2) {
+/* 2 ROW — DEPUTIES */
+.team-card.deputy:nth-of-type(2) {
   grid-column: 2 / span 2;
 }
-.team-card.deputy:nth-child(3) {
+.team-card.deputy:nth-of-type(3) {
   grid-column: 4 / span 2;
 }
 
-/* Третий ряд: руководители отделов */
+/* 3 ROW — HEADS */
 .team-card:nth-child(n+4) {
   grid-column: auto;
 }
 
-/* Адаптив */
-@media(max-width: 1024px) {
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 1024px) {
+
   .team-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .team-card {
+    width: 100%;
+    max-width: 240px;
+  }
+
 }
 
-@media(max-width: 768px) {
+/* =========================
+   MOBILE (FINAL FIX)
+========================= */
+@media (max-width: 768px) {
+
   .team-grid {
     grid-template-columns: 1fr;
   }
+
+  /* СБРОС ВСЕГО GRID-ПОЗИЦИОНИРОВАНИЯ */
+  .team-card {
+    grid-column: auto !important;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .team-card img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .team-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .team-card p {
+    font-size: 0.95rem;
+  }
+
 }
+
 
 .center-gallery {
   margin-top: 50px;
