@@ -211,25 +211,27 @@ img {
   transition: transform 0.3s ease;
 }
 
-/* Hover */
 .news-card:hover {
   transform: translateY(-6px);
 }
 
-/* Обертка для медиа, чтобы сохранить 9:16 */
+/* === МЕДИА === */
 .news-card .media-wrapper {
   width: 100%;
-  aspect-ratio: 9 / 16; /* сохраняем вертикальный формат */
-  background: #000;     /* черный фон для видео */
+  aspect-ratio: 9 / 16;      /* единый вертикальный формат */
+  background: #f1f5f9;       /* нейтральный фон */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
 }
 
-/* Изображение или видео */
+/* Фото и видео — БЕЗ ОБРЕЗКИ */
 .news-card .media-wrapper img,
 .news-card .media-wrapper video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;      /* ❗ ключевой момент */
   display: block;
 }
 
@@ -264,6 +266,7 @@ img {
     margin: 0 10px;
   }
 }
+
 
 /* =========================
    INSTAGRAM CTA
