@@ -174,7 +174,7 @@ img {
 }
 
 .slider-track img {
-  height: 520px;
+  width: 100vw;
   object-fit: cover;
   flex-shrink: 0;
 }
@@ -1001,3 +1001,4 @@ img {
     grid-template-columns: 1fr;
   }
 }
+
