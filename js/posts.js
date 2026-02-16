@@ -7,9 +7,17 @@ fetch("data/posts.json")
       let mediaHTML = "";
 
       if (post.video) {
-        mediaHTML = `<video src="${post.video}" controls poster="${post.poster || ''}" playsinline muted preload="metadata"></video>`;
+        mediaHTML = `
+          <video 
+            src="${post.video}" 
+            controls 
+            poster="${post.poster || ''}" 
+            playsinline 
+            preload="metadata"
+          ></video>
+        `;
       } else if (post.image) {
-        mediaHTML = `<img src="${post.image}">`;
+        mediaHTML = `<img src="${post.image}" alt="${post.title}">`;
       }
 
       container.innerHTML += `
