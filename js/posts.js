@@ -1,4 +1,4 @@
-fetch("./data/posts.json")
+fetch("data/posts.json")
   .then(res => res.json())
   .then(posts => {
     const container = document.getElementById("posts");
@@ -32,3 +32,4 @@ fetch("./data/posts.json")
     });
   })
   .catch(err => console.error(err));
+
